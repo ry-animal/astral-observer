@@ -1,9 +1,9 @@
 @font-face {
-  font-family: 'Bokrun';
-  src: url('BattleStar.ttf') format('truetype');
+  font-family: 'Orphan';
+  src: url('Orphan.ttf') format('truetype');
 }
 
-/* @font-face {
-  font-family: 'Bokrun-Shadow';
-  src: url('TheBokrunTrial-1GWj4.ttf') format('truetype');
-} */
+@font-face {
+  font-family: 'Bokrun';
+  src: url('BokrunReg.ttf') format('truetype');
+}

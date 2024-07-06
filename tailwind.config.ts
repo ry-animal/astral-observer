@@ -15,6 +15,7 @@ const config = {
     extend: {
       fontFamily: {
         bokrun: ['Bokrun', 'sans-serif'],
+        orphan: ['Orphan', 'sans-serif'],
       },
       colors: {
         border: 'hsl(var(--border))',
