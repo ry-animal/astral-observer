@@ -13,23 +13,25 @@ const fontSans = FontSans({
 });
 
 interface AppLayoutProps {
-  children: React.ReactNode;
+  children: (props: { chainName: string }) => React.ReactNode;
+  chainName?: string;
 }
 
-const AppLayout = ({ children }: AppLayoutProps) => {
-  const [chainName, setChainName] = useState(CHAIN_NAME);
+const AppLayout = ({ children, chainName: initialChainName = CHAIN_NAME }: AppLayoutProps) => {
+  const [chainName, setChainName] = useState(initialChainName);
 
   function onChainChange(chainName?: string) {
     setChainName(chainName!);
   }
 
   const wallet = <Wallet chainName={chainName} onChainChange={onChainChange} />;
+
   return (
     <div className={cn('min-h-screen font-sans antialiased', fontSans.variable)}>
       <div style={{ backgroundImage: `url(${bgImage.src})` }} className="fixed inset-0 bg-cover bg-center" />
       <div className="relative z-10 flex flex-col min-h-screen">
         <Header wallet={wallet} />
-        <main className="flex-grow container mx-auto px-4 py-8">{children}</main>
+        <main className="flex-grow container mx-auto px-4 py-8">{children({ chainName })}</main>
         <Footer />
       </div>
     </div>

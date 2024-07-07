@@ -1,20 +1,55 @@
+import { useEffect, useState } from 'react';
+import PageLinkButton from '@/components/page-link';
 import AppLayout from '@/layouts/app-layout';
 import { ProjectorIcon } from 'lucide-react';
-import PageLinkButton from '@/components/page-link';
+import { useChain } from '@cosmos-kit/react';
 
 export default function Home() {
+  const [searchWallet, setSearchWallet] = useState('');
+  const [myWalletAddress, setMyWalletAddress] = useState('');
+
   return (
     <AppLayout>
-      <div className="flex flex-col items-center justify-center h-screen font-orphan text-white gap-4">
-        <PageLinkButton href={`/walletCollection/${'pull own wallet here'}`}>
-          My Collection
-          <ProjectorIcon />
-        </PageLinkButton>
-        <PageLinkButton href={`/walletCollection/${'enter a wallet here'}`}>
-          Search for Collection
-          <ProjectorIcon />
-        </PageLinkButton>
-      </div>
+      {({ chainName }) => {
+        const { address, status, chain } = useChain(chainName);
+
+        useEffect(() => {
+          if (status === 'Connected' && address) {
+            setMyWalletAddress(address);
+          } else {
+            setMyWalletAddress('');
+          }
+        }, [address, status]);
+
+        const getCollectionUrl = (address: string) => `/walletCollection?chainId=${chain.chain_id}&address=${address}`;
+
+        return (
+          <div className="flex flex-col items-center justify-center h-screen font-orphan text-white gap-20">
+            <PageLinkButton
+              href={myWalletAddress ? getCollectionUrl(myWalletAddress) : '#'}
+              disabled={!myWalletAddress}
+            >
+              My Collection
+              <ProjectorIcon />
+            </PageLinkButton>
+
+            <div className="flex flex-col items-center gap-2">
+              <input
+                type="text"
+                value={searchWallet}
+                onChange={(e) => setSearchWallet(e.target.value)}
+                placeholder="Enter wallet address"
+                className="px-4 py-2 text-black rounded font-bokrun w-72 text-center bg-white/75"
+                aria-label="Enter wallet address"
+              />
+              <PageLinkButton href={getCollectionUrl(searchWallet)} disabled={searchWallet.length === 0}>
+                Search for Collection
+                <ProjectorIcon />
+              </PageLinkButton>
+            </div>
+          </div>
+        );
+      }}
     </AppLayout>
   );
 }
