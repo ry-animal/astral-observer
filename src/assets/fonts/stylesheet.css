@@ -7,3 +7,23 @@
   font-family: 'Bokrun';
   src: url('BokrunReg.ttf') format('truetype');
 }
+
+@font-face {
+  font-family: 'Galaxy';
+  src: url('Galaxy.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Stars';
+  src: url('Stars.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Cruiser';
+  src: url('Cruiser.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Apex';
+  src: url('Apex.ttf') format('truetype');
+}

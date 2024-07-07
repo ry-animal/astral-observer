@@ -35,10 +35,23 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - [x] Make `Landing` page
 - [x] Make `Header` and `Footer`
 - [x] Add Keplr Wallet support via npx-cosmos-app code
-- [ ] Add `NFT Collection` page
-- [ ] Add `NFT Collection` filter functionality
-- [ ] Add `Background` swap functionality
+- [x] Add `NFT Collection` page
+- [x] Add `NFT Collection` quantity filter
+- [x] Add `Background` swap functionality
+- [x] Refactor WalletConnection for modularity/readability
+- [ ] Remove excessive chains
+- [ ] Remove excess fonts
 - [ ] Add `NFT position` functionality
 - [ ] Store `Backgrounds` in local storage
 - [ ] Store `NFT position` in local storage
+- [ ] Touch up mobile view
+
+## Opportunities
+
+- [ ] Rework Header, add subheader cleanup for settings on Collection View?
 - [ ] Add `NFT Detail` page
+  - [ ] More NFT specific details
+  - [ ] Link to a Mktplace
+  - [ ] Buy/Sell?
+- [ ] Create profiles
+- [ ] Save to external DB instead of local storage

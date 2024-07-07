@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import PageLinkButton from '@/components/page-link';
 import AppLayout from '@/layouts/app-layout';
-import { ProjectorIcon } from 'lucide-react';
+import { ImagesIcon } from 'lucide-react';
 import { useChain } from '@cosmos-kit/react';
 
 export default function Home() {
@@ -30,7 +30,7 @@ export default function Home() {
               disabled={!myWalletAddress}
             >
               My Collection
-              <ProjectorIcon />
+              <ImagesIcon />
             </PageLinkButton>
 
             <div className="flex flex-col items-center gap-2">
@@ -39,12 +39,12 @@ export default function Home() {
                 value={searchWallet}
                 onChange={(e) => setSearchWallet(e.target.value)}
                 placeholder="Enter wallet address"
-                className="px-4 py-2 text-black rounded font-bokrun w-72 text-center bg-white/75"
+                className="px-4 py-2 text-black rounded w-72 font-sans text-center bg-white/75"
                 aria-label="Enter wallet address"
               />
               <PageLinkButton href={getCollectionUrl(searchWallet)} disabled={searchWallet.length === 0}>
                 Search for Collection
-                <ProjectorIcon />
+                <ImagesIcon />
               </PageLinkButton>
             </div>
           </div>

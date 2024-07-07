@@ -56,7 +56,7 @@ export function Wallet({ chainName = CHAIN_NAME, onChainChange = () => {} }: Wal
         <ChainSelect chains={chains} chainName={chain.chain_name} onChange={handleChainChange} />
       </Box>
       <div className="pt-2 flex flex-col gap-6 w-[200px] ml-8 md:ml-0">
-        <button onClick={toggleVisibility}>{isVisible ? 'Hide Wallet' : 'Show Wallet'}</button>
+        <button onClick={toggleVisibility}>{isVisible ? 'HIDE WALLET' : 'SHOW WALLET'}</button>
 
         <Stack
           direction="vertical"
@@ -64,11 +64,7 @@ export function Wallet({ chainName = CHAIN_NAME, onChainChange = () => {} }: Wal
             maxWidth: '16rem',
             borderRadius: '$lg',
             justifyContent: 'center',
-            backgroundColor: useColorModeValue('$white', '$blackAlpha500'),
-            boxShadow: useColorModeValue(
-              '0 0 2px #dfdfdf, 0 0 6px -2px #d3d3d3',
-              '0 0 2px #363636, 0 0 8px -2px #4f4f4f',
-            ),
+            backgroundColor: isVisible ? '$blackAlpha500' : '',
           }}
         >
           {username && isVisible && (
@@ -85,6 +81,7 @@ export function Wallet({ chainName = CHAIN_NAME, onChainChange = () => {} }: Wal
             overflow="hidden"
             justifyContent="center"
             px={{ mobile: '$8', tablet: '$10' }}
+            className="my-4"
           >
             {isVisible && ConnectButton}
           </Box>

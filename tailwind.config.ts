@@ -13,9 +13,16 @@ const config = {
       },
     },
     extend: {
+      fontSize: {
+        xxs: '0.625rem',
+      },
       fontFamily: {
         bokrun: ['Bokrun', 'sans-serif'],
         orphan: ['Orphan', 'sans-serif'],
+        galaxy: ['Galaxy', 'sans-serif'],
+        stars: ['Stars', 'sans-serif'],
+        cruiser: ['Cruiser', 'sans-serif'],
+        apex: ['Apex', 'sans-serif'],
       },
       colors: {
         border: 'hsl(var(--border))',
