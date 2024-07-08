@@ -51,11 +51,11 @@ export function Wallet({ chainName = CHAIN_NAME, onChainChange = () => {} }: Wal
   }, []);
 
   return (
-    <Box className="fixed top-0 right-0 mt-4 mr-4 z-[9999] flex flex-col items-end w-48 sm:w-72">
-      <Box className="mb-2">
+    <Box className="fixed top-0 right-0 mt-4 z-[9999] flex items-end gap-2">
+      <Box>
         <ChainSelect chains={chains} chainName={chain.chain_name} onChange={handleChainChange} />
       </Box>
-      <div className="flex flex-col items-end w-40 text-lg">
+      <div className="flex flex-col items-end w-40 text-lg mr-8">
         <button onClick={toggleVisibility} className="p-1 md:p-2 bg-blue-500 text-white rounded w-full">
           {isVisible ? 'HIDE WALLET' : 'SHOW WALLET'}
         </button>

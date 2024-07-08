@@ -194,7 +194,7 @@ const WalletCollection = () => {
   const renderContent = () => {
     return (
       <AppLayout>
-        {({ chainName, setCustomBackground, clearCustomBackground, showClear }) => {
+        {({ setCustomBackground, clearCustomBackground, showClear }) => {
           if (!walletAddress) {
             return (
               <CenteredMessage>
