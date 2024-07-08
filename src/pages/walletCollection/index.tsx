@@ -241,7 +241,7 @@ const WalletCollection = () => {
               )}
 
               {showSettings && (
-                <div className="bg-black bg-opacity-50 p-4 rounded-lg w-full max-w-md relative mt-12 md:mt-4">
+                <div className="bg-black bg-opacity-50 p-4 rounded-lg w-md relative mt-12 md:mt-4">
                   <button onClick={() => setShowSettings(false)} className="absolute top-2 right-2 text-white">
                     ✕
                   </button>
@@ -283,7 +283,7 @@ const WalletCollection = () => {
                       className="text-black px-2 py-1 rounded font-sans w-24 bg-white/75 flex-1"
                     />
                     <button type="submit" className="ml-2 bg-blue-500 px-4 py-1 rounded">
-                      Apply
+                      Reset Limit
                     </button>
                   </form>
 
@@ -292,8 +292,8 @@ const WalletCollection = () => {
                   </button>
 
                   <p className="flex text-center justify-center mt-4">
-                    You can drag and drop to change the ordering or click the X to remove from view. To reset, just
-                    'Apply' with NFT limit.
+                    You can drag and drop to change the ordering or click the 'X' to remove NFT from view. To reset,
+                    just 'Apply' with NFT limit and exit the settings to save.
                   </p>
                 </div>
               )}
