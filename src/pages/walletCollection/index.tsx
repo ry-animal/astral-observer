@@ -58,7 +58,7 @@ const DraggableNFT: React.FC<DraggableNFTProps> = ({ token, index, moveNFT, show
   return (
     <div
       ref={ref}
-      className={`border rounded-lg overflow-hidden shadow-lg bg-gray-800/75 flex flex-col h-full relative ${
+      className={`border rounded-lg overflow-hidden shadow-lg bg-gray-800/75 flex flex-col min-h-0 relative ${
         isDragging ? 'opacity-50' : ''
       }`}
     >
@@ -71,9 +71,9 @@ const DraggableNFT: React.FC<DraggableNFTProps> = ({ token, index, moveNFT, show
         </button>
       )}
       <div className="flex-grow flex items-center justify-center overflow-hidden">
-        <img src={token.media.url} alt={token.name} className="w-full h-full object-contain" />
+        <img src={token.media.url} alt={token.name} className="w-full h-auto object-contain" />
       </div>
-      <div className="flex flex-col p-2 md:p-4 gap-1 md:gap-2 h-24 md:h-28 border border-top-white">
+      <div className="p-2 md:p-4 border-t border-gray-700">
         <h3 className="font-semibold text-sm md:text-lg truncate">{token.name}</h3>
         <p className="text-xxs md:text-sm text-gray-400 truncate">
           {isMobile ? '' : 'Collection: '}
