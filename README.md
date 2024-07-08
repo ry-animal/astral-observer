@@ -45,8 +45,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - [x] Touch up mobile view
 - [x] Remove excess fonts
 - [x] Add `NFT position` functionality
-
-- [ ] Remove excessive chains
+- [x] Remove excessive chains
 
 ## Opportunities
 

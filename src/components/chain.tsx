@@ -30,7 +30,7 @@ export function ChainSelect({ chainName, chains = [], onChange = () => {} }: Cha
             value: chain.chain_name,
             label: chain.pretty_name,
           }))
-          .filter((chain) => chain.value && chain.label),
+          .filter((chain) => chain.value && chain.label && chain.value.includes('stargaze')),
         input,
         { keys: ['value', 'label'] },
       ),
