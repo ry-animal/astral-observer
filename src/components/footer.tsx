@@ -2,7 +2,7 @@ import { Github, CameraIcon } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <div className="flex fixed bottom-0 left-1/2 -translate-x-1/2 w-full justify-between font-bokrun text-xs md:text-sm text-white py-4 px-12">
+    <div className="flex fixed bottom-0 left-1/2 -translate-x-1/2 w-full justify-between font-bokrun text-xxs md:text-sm text-white py-4 px-12">
       <span className="flex gap-1">
         <span>created by</span>
         <a

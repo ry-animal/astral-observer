@@ -1,23 +1,31 @@
-# Use an official Node.js runtime as the base image
-FROM node:20-alpine
+# Use an official Node runtime as the base image
+FROM node:20-bullseye
 
-# Set the working directory in the container
+# Install Python and other necessary build tools
+RUN apt-get update && apt-get install -y \
+    python3 \
+    python3-pip \
+    make \
+    g++ \
+    && ln -s /usr/bin/python3 /usr/bin/python
+
+# Set working directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json (if available)
+# Copy package.json and package-lock.json
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install
+RUN npm ci
 
-# Copy the rest of the application code
+# Copy the rest of the application
 COPY . .
 
-# Build the Next.js application
+# Build the application
 RUN npm run build
 
-# Expose port 80 for the application
-EXPOSE 80
+# Expose the port the app runs on
+EXPOSE 8080
 
-# Start the application, binding to port 80
-CMD ["npm", "start", "--", "-p", "80"]
+# Start the application
+CMD ["npm", "start", "--", "-p", "8080"]

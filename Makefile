@@ -2,7 +2,7 @@
 DOCKER_IMAGE_NAME = astral-observer
 DOCKER_CONTAINER_NAME = next-14
 HOST_PORT = 8080
-CONTAINER_PORT = 80
+CONTAINER_PORT = 8080
 
 .PHONY: build run dev clean stop clean-app deploy teardown install lint build-app build-local start-local
 
@@ -25,7 +25,7 @@ clean:
 
 # Development commands
 install:
-	npm install
+	npm ci
 
 dev:
 	npm run dev
@@ -47,7 +47,7 @@ build-local: build-app
 
 # Start the Next.js application locally
 start-local:
-	npm start -- -p $(HOST_PORT)
+	npm start -- -p 8080
 
 # All-in-one command for Docker deployment
 deploy: build run

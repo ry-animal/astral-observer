@@ -10,6 +10,17 @@
 First, run the development server:
 
 ```bash
+
+# Install dependencies
+npm install
+# or
+yarn
+# or
+pnpm install
+# or
+bun install
+
+# Run the development server
 npm run dev
 # or
 yarn dev
@@ -22,6 +33,8 @@ make deploy
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+Open [http://localhost:8080](http://localhost:8080) with your browser to see docker-hosted.
 
 ## Deploy on Vercel
 
@@ -39,7 +52,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - [x] Add `NFT Collection` page
 - [x] Add `NFT Collection` quantity filter
 - [x] Add `Background` swap functionality
-- [x] Refactor WalletConnection for modularity/readability
 - [x] Store `Backgrounds` in local storage
 - [x] Store `NFT position` in local storage
 - [x] Touch up mobile view
@@ -49,6 +61,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Opportunities
 
+- [ ] Refactor WalletConnection for modularity/readability
 - [ ] Rework Header, add subheader cleanup for settings on Collection View?
 - [ ] Add animations/transitions
 - [ ] Add `NFT Detail` page
