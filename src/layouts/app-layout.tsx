@@ -17,6 +17,7 @@ interface AppLayoutProps {
     chainName: string;
     setCustomBackground: (url: string) => void;
     clearCustomBackground: () => void;
+    showClear: boolean;
   }) => React.ReactNode;
   chainName?: string;
 }
@@ -61,6 +62,7 @@ const AppLayout = ({ children, chainName: initialChainName = CHAIN_NAME }: AppLa
             chainName,
             setCustomBackground: setAndSaveCustomBackground,
             clearCustomBackground,
+            showClear: Boolean(customBackground),
           })}
         </main>
         <Footer />

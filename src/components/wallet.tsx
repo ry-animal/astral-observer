@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Box, ClipboardCopyText, Stack, useColorModeValue } from '@interchain-ui/react';
+import { Box, ClipboardCopyText, Stack } from '@interchain-ui/react';
 import { WalletStatus } from '@cosmos-kit/core';
 import { useChain } from '@cosmos-kit/react';
 import { chains } from 'chain-registry';
@@ -51,45 +51,52 @@ export function Wallet({ chainName = CHAIN_NAME, onChainChange = () => {} }: Wal
   }, []);
 
   return (
-    <Box className="flex flex-col md:flex-row -mr-10 gap-4 md:mr-0">
-      <Box mx="auto" maxWidth="16rem" className="top-0">
+    <Box className="fixed top-0 right-0 mt-4 mr-4 z-[9999] flex flex-col items-end">
+      <Box maxWidth="16rem" className="mb-2">
         <ChainSelect chains={chains} chainName={chain.chain_name} onChange={handleChainChange} />
       </Box>
-      <div className="pt-2 flex flex-col gap-6 w-[200px] ml-8 md:ml-0">
-        <button onClick={toggleVisibility}>{isVisible ? 'HIDE WALLET' : 'SHOW WALLET'}</button>
+      <div className="flex flex-col items-end w-40 text-lg mt-8 md:mt-0 mr-8 md:mr-0">
+        <button onClick={toggleVisibility} className="p-1 md:p-2 bg-blue-500 text-white rounded w-full">
+          {isVisible ? 'HIDE WALLET' : 'SHOW WALLET'}
+        </button>
 
-        <Stack
-          direction="vertical"
-          attributes={{
-            maxWidth: '16rem',
-            borderRadius: '$lg',
-            justifyContent: 'center',
-            backgroundColor: isVisible ? '$blackAlpha500' : '',
-          }}
-        >
-          {username && isVisible && (
-            <>
-              <User name={username} />
-              {address ? <ClipboardCopyText text={address} truncate="middle" /> : null}
-            </>
-          )}
-          <Box
-            flex="1"
-            width="full"
-            display="flex"
-            height="$16"
-            overflow="hidden"
-            justifyContent="center"
-            px={{ mobile: '$8', tablet: '$10' }}
-            className="my-4"
+        {isVisible && (
+          <Stack
+            direction="vertical"
+            attributes={{
+              width: '100%',
+              maxWidth: '16rem',
+              borderRadius: '$lg',
+              justifyContent: 'center',
+              backgroundColor: '$blackAlpha800',
+              padding: '$4',
+              marginTop: '$2',
+            }}
           >
-            {isVisible && ConnectButton}
-          </Box>
+            {username && (
+              <>
+                <User name={username} />
+                {address ? <ClipboardCopyText text={address} truncate="middle" /> : null}
+              </>
+            )}
+            <Box
+              flex="1"
+              width="full"
+              display="flex"
+              height="$16"
+              overflow="hidden"
+              justifyContent="center"
+              px={{ mobile: '$4', tablet: '$6' }}
+              className="my-2"
+            >
+              {ConnectButton}
+            </Box>
 
-          {message && [WalletStatus.Error, WalletStatus.Rejected].includes(status) ? (
-            <Warning text={`${wallet?.prettyName}: ${message}`} />
-          ) : null}
-        </Stack>
+            {message && [WalletStatus.Error, WalletStatus.Rejected].includes(status) ? (
+              <Warning text={`${wallet?.prettyName}: ${message}`} />
+            ) : null}
+          </Stack>
+        )}
       </div>
     </Box>
   );

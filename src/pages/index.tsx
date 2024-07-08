@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import PageLinkButton from '@/components/page-link';
 import AppLayout from '@/layouts/app-layout';
-import { ImagesIcon } from 'lucide-react';
+import { ImagesIcon, PersonStanding, User, UserRoundIcon, UserRoundSearchIcon } from 'lucide-react';
 import { useChain } from '@cosmos-kit/react';
 
 export default function Home() {
@@ -24,16 +24,20 @@ export default function Home() {
         const getCollectionUrl = (address: string) => `/walletCollection?chainId=${chain.chain_id}&address=${address}`;
 
         return (
-          <div className="flex flex-col items-center justify-center h-screen font-orphan text-white gap-20">
+          <div className="flex flex-col items-center justify-center h-screen font-apex text-white gap-20">
             <PageLinkButton
               href={myWalletAddress ? getCollectionUrl(myWalletAddress) : '#'}
               disabled={!myWalletAddress}
             >
               My Collection
-              <ImagesIcon />
+              <div className="flex gap-1">
+                <UserRoundIcon />
+                <ImagesIcon />
+              </div>
             </PageLinkButton>
 
             <div className="flex flex-col items-center gap-2">
+              <span className="text-xxs text-grey">ie. stars199s7sp2sfcu9s7z9qf9js4pxj3clem42yzspln</span>
               <input
                 type="text"
                 value={searchWallet}
@@ -44,7 +48,10 @@ export default function Home() {
               />
               <PageLinkButton href={getCollectionUrl(searchWallet)} disabled={searchWallet.length === 0}>
                 Search for Collection
-                <ImagesIcon />
+                <div className="flex gap-1">
+                  <UserRoundSearchIcon />
+                  <ImagesIcon />
+                </div>
               </PageLinkButton>
             </div>
           </div>

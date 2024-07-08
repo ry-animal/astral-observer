@@ -1,26 +1,6 @@
 @font-face {
-  font-family: 'Orphan';
-  src: url('Orphan.ttf') format('truetype');
-}
-
-@font-face {
   font-family: 'Bokrun';
   src: url('BokrunReg.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Galaxy';
-  src: url('Galaxy.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Stars';
-  src: url('Stars.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Cruiser';
-  src: url('Cruiser.ttf') format('truetype');
 }
 
 @font-face {

@@ -3,6 +3,7 @@
   - [Getting Started](#getting-started)
   - [Learn More](#learn-more)
   - [Deploy on Vercel](#deploy-on-vercel)
+  - [Vercel Site](astral-observer.vercel.app)
 
 ## Getting Started
 
@@ -20,7 +21,7 @@ bun dev
 make deploy
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.]
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Deploy on Vercel
 
@@ -39,19 +40,21 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - [x] Add `NFT Collection` quantity filter
 - [x] Add `Background` swap functionality
 - [x] Refactor WalletConnection for modularity/readability
+- [x] Store `Backgrounds` in local storage
+- [x] Store `NFT position` in local storage
+- [x] Touch up mobile view
+- [x] Remove excess fonts
+- [x] Add `NFT position` functionality
+
 - [ ] Remove excessive chains
-- [ ] Remove excess fonts
-- [ ] Add `NFT position` functionality
-- [ ] Store `Backgrounds` in local storage
-- [ ] Store `NFT position` in local storage
-- [ ] Touch up mobile view
 
 ## Opportunities
 
 - [ ] Rework Header, add subheader cleanup for settings on Collection View?
+- [ ] Add animations/transitions
 - [ ] Add `NFT Detail` page
   - [ ] More NFT specific details
-  - [ ] Link to a Mktplace
+  - [ ] Link to a Marketplace
   - [ ] Buy/Sell?
 - [ ] Create profiles
 - [ ] Save to external DB instead of local storage
